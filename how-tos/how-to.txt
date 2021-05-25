@@ -1,4 +1,4 @@
-##  Basic structure of an Single React Page
+##  Basic structure of an Single React Page. Reference: https://reactjs.org/
 
 import React from 'react';
 import './App.css';
