@@ -22,13 +22,8 @@ class App extends React.Component {
 
       return (
         <div className="App">
-          <CardList name='Mario'>
-            {this.state.monsters.map(
-                monster => (
-                  <h1>{monster.name}</h1>
-                )
-              )}
-          </CardList>
+          {/* We are passing monsters as a props to the CardList component */}
+          <CardList monsters={this.state.monsters} /> 
          </div>
       );
   
