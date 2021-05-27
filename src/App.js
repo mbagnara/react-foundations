@@ -1,6 +1,8 @@
 import React from 'react';
-import { CardList } from './components/card-list/card-list.component';
 import './App.css';
+import { CardList } from './components/card-list/card-list.component';
+import { SearchBox } from './components/search-box/search-box.component';
+
 
 class App extends React.Component {
 
@@ -34,17 +36,9 @@ class App extends React.Component {
 
       return (
         <div className="App">
-
-          <input 
-            type="search" 
-            placeholder="search monsters" 
-            onChange={e => {                      
-                this.setState(                    // Asynchronous Action. Second parameter executes synchronously
-                  {searchField: e.target.value},  // Set up the valyue of searchField
-                  () => console.log(this.state)   // (OPTIONAL) Called synchronously right after searchField is set up in the first parameter
-                ); 
-              }
-            }
+          <SearchBox 
+            placeholder='search monsters'
+            handleChange={e => {this.setState({searchField: e.target.value})}}
           />
 
           {/* We are passing monsters as a props to the CardList component */}
