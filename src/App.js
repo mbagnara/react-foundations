@@ -21,6 +21,10 @@ class App extends React.Component {
         .then(users => this.setState({ monsters: users}))
     }
 
+    handleChange = e => {
+      this.setState({searchField: e.target.value});
+    }
+
     render(){
       // this.setState() re-renders the page everytime it is called on causing to get a new list of filtered Monsters.
       const { monsters, searchField } = this.state; // destructuring
@@ -38,7 +42,7 @@ class App extends React.Component {
         <div className="App">
           <SearchBox 
             placeholder='search monsters'
-            handleChange={e => {this.setState({searchField: e.target.value})}}
+            handleChange={this.handleChange} // {e => {this.setState({searchField: e.target.value})}}
           />
 
           {/* We are passing monsters as a props to the CardList component */}
